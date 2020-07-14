@@ -1,18 +1,6 @@
-import { View, StyleSheet, Text } from "react-native";
 import React from "react";
+import { CreatePost } from "../components/CreatePost/CreatePost";
 
-export const CreateScreen = () => {
-  return (
-    <View style={styles.center}>
-      <Text>CreateScreen </Text>
-    </View>
-  );
+export const CreateScreen = ({ navigation }) => {
+  return <CreatePost navigation={navigation} />;
 };
-
-const styles = StyleSheet.create({
-  center: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

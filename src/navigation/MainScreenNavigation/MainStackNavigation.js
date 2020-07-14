@@ -59,7 +59,7 @@ export const MainStackNavigation = ({ navigation }) => {
               <Item
                 title={"Right"}
                 iconName="star"
-                onPress={() => alert("sadsad")}
+                onPress={() => alert("In process...")}
               />
             </HeaderButtons>
           ),

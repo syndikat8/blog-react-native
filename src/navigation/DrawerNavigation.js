@@ -14,7 +14,7 @@ export const AppDrawerNavigation = () => {
       initialRouteName="Main"
       drawerContentOptions={{
         activeTintColor: THEME.MAIN_COLOR,
-        labelStyle: {fontSize: 16},
+        labelStyle: { fontSize: 16 },
       }}
       drawerStyle={{
         backgroundColor: THEME.DRAWER_COLOR,
@@ -23,8 +23,16 @@ export const AppDrawerNavigation = () => {
     >
       <Drawer.Screen name="Home" component={BottomTabsNavigation} />
       <Drawer.Screen name="Notes" component={TodoNavigation} />
-      <Drawer.Screen name="Create" component={CreateNavigation} options={{ drawerLabel: "New post" }}/>
-      <Drawer.Screen name="About" component={AbautNavigation} options={{ drawerLabel: "About application" }} />
+      <Drawer.Screen
+        name="Create"
+        component={CreateNavigation}
+        options={{ drawerLabel: "New post" }}
+      />
+      <Drawer.Screen
+        name="About"
+        component={AbautNavigation}
+        options={{ drawerLabel: "About application" }}
+      />
     </Drawer.Navigator>
   );
 };

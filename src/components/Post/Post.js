@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { THEME } from "../../theme/theme";
 
-export const Post = ({ post }) => {
+export const Post = ({ post, deletePost }) => {
   const onDeleteButtonPress = () => {
     Alert.alert(
       "Delete post",
@@ -20,11 +20,19 @@ export const Post = ({ post }) => {
           text: "Cancel",
           style: "cancel",
         },
-        { text: "Delete", onPress: () => console.log("OK Pressed") },
+        {
+          text: "Delete",
+          onPress: () => {
+            deletePost();
+          },
+        },
       ],
       { cancelable: false }
     );
   };
+
+  if (!post) return null;
+
   return (
     <ScrollView>
       <Image source={{ uri: post.img }} style={styles.image}></Image>
