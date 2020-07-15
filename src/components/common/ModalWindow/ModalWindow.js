@@ -20,9 +20,10 @@ export const ModalWindow = ({ visible, setEditMode, id, dispatch, title }) => {
   };
 
   return (
-    <Modal visible={visible} animationType="slide">
+    <Modal visible={visible} animationType="slide" >
       <View style={styles.wrap}>
         <TextInput
+          style={styles.input}
           value={value}
           onChangeText={setValue}
           placeholder="Enter a new title"
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: THEME.DRAWER_COLOR
   },
   buttons: {
     flexDirection: "row",
@@ -61,4 +63,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: { width: "30%" },
+  input: {
+    borderBottomWidth: 2,
+    borderStyle: "solid",
+    borderBottomColor: THEME.BLUE_COLOR_BUTTON,
+    width: "75%",
+    padding: 5,
+    fontSize: 22,
+  },
 });

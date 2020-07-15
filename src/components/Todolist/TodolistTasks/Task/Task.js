@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { ModalWindow } from "../../../common/ModalWindow/ModalWindow";
 import { useDispatch } from "react-redux";
-// import { MaterialIcons } from "@expo/vector-icons";
-// import {THEME} from "../../../../theme/theme";
+import { MaterialIcons } from "@expo/vector-icons";
+import {THEME} from "../../../../theme/theme";
 import {deleteTask} from "../../../../redux/reducers/todoReducer";
 
 
@@ -21,9 +21,11 @@ export const Task = ({ title, id }) => {
 
   return (
     <View style={styles.task}>
-      <Text style={styles.taskText} onLongPress={onTextLongPress}>
-        {title}
-      </Text>
+     <View style={styles.wrapText} >
+       <Text style={styles.taskText} onLongPress={onTextLongPress}>
+         {title}
+       </Text>
+     </View>
       <ModalWindow
         visible={editMode}
         setEditMode={setEditMode}
@@ -31,12 +33,14 @@ export const Task = ({ title, id }) => {
         id={id}
         title={title}
       />
-      {/*<MaterialIcons*/}
-      {/*  onPress={onButtonPress}*/}
-      {/*  name="delete"*/}
-      {/*  size={24}*/}
-      {/*  color={THEME.BLUE_COLOR_BUTTON}*/}
-      {/*/>*/}
+      <View>
+        <MaterialIcons
+          onPress={onButtonPress}
+          name="delete"
+          size={24}
+          color={THEME.BLUE_COLOR_BUTTON}
+        />
+      </View>
     </View>
   );
 };
@@ -47,12 +51,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 8,
     borderWidth: 1,
-    borderColor: "#000",
+    borderColor: THEME.MAIN_COLOR,
     marginBottom: 6,
     borderRadius: 10,
     alignItems: "center",
+
   },
   taskText: {
     fontSize: 16,
   },
+  wrapText: {
+    width: "90%"
+  }
 });
