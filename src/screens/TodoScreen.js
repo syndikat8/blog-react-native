@@ -1,18 +1,7 @@
-import { View, StyleSheet, Text } from "react-native";
 import React from "react";
+import {Todolist} from "../components/Todolist/Todolist";
 
 export const TodoScreen = () => {
-  return (
-    <View style={styles.center}>
-      <Text>TodoScreen </Text>
-    </View>
-  );
+  return <Todolist/>
 };
 
-const styles = StyleSheet.create({
-  center: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

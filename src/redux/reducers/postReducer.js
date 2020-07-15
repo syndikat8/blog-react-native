@@ -26,6 +26,7 @@ export const postReducer = (state = initialState, action) => {
 
     case ADD_POST:
       const newPost = {
+        id: Date.now().toString(),
         date: new Date().toJSON(),
         text: action.text,
         img: action.img,
@@ -43,7 +44,6 @@ export const postReducer = (state = initialState, action) => {
 export const loadPosts = () => ({ type: LOAD_POSTS, payload: DATA });
 export const deletePosts = (id) => ({ type: DELETE_POST, id });
 export const addPost = (text, img) => {
-  // post.id = Date.now().toString();
   return {
     type: ADD_POST,
     text,
