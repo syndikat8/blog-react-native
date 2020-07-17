@@ -10,7 +10,7 @@ async function askForPermissions() {
   );
 
   if (status !== "granted") {
-    Alert.alert("Error", "Вы не дали прав на создание фото");
+    Alert.alert("Error", "You have not authorized the photo");
     return false;
   }
   return true;

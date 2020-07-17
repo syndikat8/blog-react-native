@@ -1,7 +1,8 @@
-import { DATA } from "../../data";
-const LOAD_POSTS = "blog-react-native/postRecucer/LOAD_POSTS";
-const DELETE_POST = "blog-react-native/postRecucer/DELETE_POST";
-const ADD_POST = "log-react-native/postRecucer/ADD_POST";
+import {DATA} from "../../data";
+
+const LOAD_POSTS = "blog-react-native/postReducer/LOAD_POSTS";
+const DELETE_POST = "blog-react-native/postReducer/DELETE_POST";
+const ADD_POST = "log-react-native/postReducer/ADD_POST";
 
 const initialState = {
   allPosts: [],

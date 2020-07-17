@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   Text,
-  Image,
   Button,
   TextInput,
   ScrollView,
@@ -13,19 +12,22 @@ import {
 import { THEME } from "../../theme/theme";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/reducers/postReducer";
+import { PhotoPicker } from "../PhotoPicker/PhotoPicker";
 
 export const CreatePost = ({ navigation }) => {
   const dispatch = useDispatch();
   const [text, setText] = useState("");
+  const [imgUri, setImgUri] = useState(null);
 
   const savePost = () => {
-    dispatch(addPost(text, IMG));
+    dispatch(addPost(text, imgUri));
     navigation.navigate("Main");
     setText("");
   };
 
-  const IMG =
-    "https://bipbap.ru/wp-content/uploads/2017/05/VOLKI-krasivye-i-ochen-umnye-zhivotnye.jpg";
+  const photoPickHandler = (uri) => {
+    setImgUri(uri);
+  };
 
   return (
     <ScrollView>
@@ -39,16 +41,12 @@ export const CreatePost = ({ navigation }) => {
             onChangeText={setText}
             multiline
           />
-          <Image
-            style={{ width: "100%", height: 200, marginBottom: 10 }}
-            source={{
-              uri: IMG,
-            }}
-          />
+          <PhotoPicker onPick={photoPickHandler} />
           <Button
             onPress={savePost}
             title="Create post"
             color={THEME.MAIN_COLOR}
+            disabled={!text || !imgUri}
           />
         </View>
       </TouchableWithoutFeedback>

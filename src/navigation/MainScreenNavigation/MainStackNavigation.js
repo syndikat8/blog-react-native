@@ -56,11 +56,7 @@ export const MainStackNavigation = ({ navigation }) => {
           ).toLocaleDateString()}`,
           headerRight: () => (
             <HeaderButtons HeaderButtonComponent={AppHeaderIcon}>
-              <Item
-                title={"Right"}
-                iconName="star"
-                onPress={() => alert("In process...")}
-              />
+              <Item iconName={false ? "star" : "star-outlined"} />
             </HeaderButtons>
           ),
         })}
