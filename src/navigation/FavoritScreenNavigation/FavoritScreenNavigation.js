@@ -13,7 +13,7 @@ export const FavoritNavigation = ({ navigation }) => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: THEME.MAIN_COLOR,
+          backgroundColor: THEME.TAB_COLOR_FAVARITE,
         },
         headerTintColor: THEME.FONT_COLOR,
         headerTitleStyle: {

@@ -12,7 +12,7 @@ export const TodoNavigation = ({ navigation }) => {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: THEME.MAIN_COLOR,
+          backgroundColor: THEME.TAB_COLOR_NOTES,
         },
         headerTintColor: THEME.FONT_COLOR,
         headerTitleStyle: {
